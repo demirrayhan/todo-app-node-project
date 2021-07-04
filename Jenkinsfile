@@ -1,7 +1,7 @@
 pipeline {
     agent { label "master" }
     stages {
-        stage("Run app on this Docker"){
+        stage("Run app on Docker"){
             agent{
                 docker{
                     image 'node:12-alpine'
@@ -11,7 +11,7 @@ pipeline {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh 'yarn install --production'
                     sh 'npm install'
-                }   
+                }
             }
         }
     }
