@@ -1,7 +1,7 @@
 pipeline {
     agent { label "master" }
     stages {
-        stage("Run app on Docker"){
+        stage("Run app on this Docker"){
             agent{
                 docker{
                     image 'node:12-alpine'
